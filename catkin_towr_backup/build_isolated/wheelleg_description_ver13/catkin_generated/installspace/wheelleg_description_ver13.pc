@@ -1,0 +1,8 @@
+prefix=/home/hyeongu/catkin_towr_backup/install_isolated
+
+Name: wheelleg_description_ver13
+Description: Description of wheelleg_description_ver13
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

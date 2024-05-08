@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	
+	<!-- trunk macro definition -->
+	<xacro:macro name="wheelleg_trunk" params="name">
+	
+
+		<!-- Floating-base Joint -->
+		<joint name="floating_base" type="fixed">
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<parent link="${name}"/>
+			<child link="base_link"/>
+		</joint>
+
+		<!-- Footprint link // world frame?? -->   
+		<link name="${name}">
+			<visual>
+				<geometry>
+					<cylinder length="0.01" radius="0.01"/>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- Trunk link -->
+		<link name="base_link">
+			<visual>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/base_link.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/base_link.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+
+            <inertial>
+                <origin xyz="-0.031757 0.00040855 0.053605" rpy="0 0 0"/>
+                <mass value="16.055"/>
+                <inertia
+	                ixx="0.170967344"
+                    ixy="-0.004463808"
+                    ixz="-0.012975254"
+                    iyy="0.362639517"
+                    iyz="-0.001275136"
+                    izz="0.446452382"/>
+            </inertial>
+
+		</link>
+
+	</xacro:macro>
+
+</robot>

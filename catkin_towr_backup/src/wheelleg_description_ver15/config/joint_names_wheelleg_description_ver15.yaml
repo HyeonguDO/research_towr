@@ -1,0 +1,13 @@
+# controller_joint_names: ['base_link', 'LF_hr_joint', 'LF_hp1_joint', 'LF_hp2_joint', 'LF_k_joint', 'LF_w_joint', 
+#                              'RF_hr_joint', 'RF_hp1_joint', 'RF_hp2_joint', 'RF_k_joint', 'RF_w_joint', 
+#                              'LH_hr_joint', 'LH_hp1_joint', 'LH_hp2_joint', 'LH_k_joint', 'LH_w_joint', 
+#                              'RH_hr_joint', 'RH_hp1_joint', 'RH_hp2_joint', 'RH_k_joint', 'RH_w_joint', ]
+
+
+
+
+
+controller_joint_names: ['', 'LF_hr_joint', 'LF_hp2_joint', 'LF_k_joint', 'LF_w_joint', 
+                             'RF_hr_joint', 'RF_hp2_joint', 'RF_k_joint', 'RF_w_joint', 
+                             'LH_hr_joint', 'LH_hp2_joint', 'LH_k_joint', 'LH_w_joint', 
+                             'RH_hr_joint', 'RH_hp2_joint', 'RH_k_joint', 'RH_w_joint', ]

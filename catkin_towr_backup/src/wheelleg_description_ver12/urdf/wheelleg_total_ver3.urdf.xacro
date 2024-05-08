@@ -1,0 +1,90 @@
+<!-- <?xml version="1.0"?>
+
+<robot name="wheelleg" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926535897931"/>
+
+  <xacro:property name="d_lb" value="0.25142"/>
+  <xacro:property name="d_db" value="0.170"/>
+  <xacro:property name="d_dz" value="0.066"/>
+
+  <xacro:property name="d_d1" value="0.06785"/>
+  <xacro:property name="d_d2" value="0.029"/>
+
+  <xacro:property name="d_l1" value="0.0975"/>
+  <xacro:property name="d_l2" value="0.3"/>
+  <xacro:property name="d_l3" value="0.3"/>
+
+  <xacro:property name="inertia_hr_x" value="-0.00064"/>
+  <xacro:property name="inertia_hr_y" value="-0.00902"/>
+  <xacro:property name="inertia_hr_z" value="-0.02338"/>
+
+  <xacro:property name="inertia_hp1_x" value="0.00424"/>
+  <xacro:property name="inertia_hp1_y" value="0"/>
+  <xacro:property name="inertia_hp1_z" value="-0.07862"/>
+
+  <xacro:property name="inertia_hp2_x" value="0.12288"/>
+  <xacro:property name="inertia_hp2_y" value="-0.000057"/>
+  <xacro:property name="inertia_hp2_z" value="0.04567"/>
+
+  <xacro:property name="inertia_k_x" value="0.12603"/>
+  <xacro:property name="inertia_k_y" value="-0.00006"/>
+  <xacro:property name="inertia_k_z" value="0.04368"/>
+
+  <xacro:property name="inertia_w_x" value="0.00004"/>
+  <xacro:property name="inertia_w_y" value="-0.00008"/>
+  <xacro:property name="inertia_w_z" value="0.00188"/>
+
+
+
+
+	<!-- wheelleg trunk -->
+	<xacro:include filename="$(find wheelleg_description_ver12)/urdf/wheelleg_trunk_ver2.urdf.xacro"/>
+
+	<!-- wheelleg legs -->      
+	<xacro:include filename="$(find wheelleg_description_ver12)/urdf/LH_wheelleg_leg_ver2.urdf.xacro"/>                 
+    <xacro:include filename="$(find wheelleg_description_ver12)/urdf/LF_wheelleg_leg_ver2.urdf.xacro"/>
+
+    <xacro:include filename="$(find wheelleg_description_ver12)/urdf/RF_wheelleg_leg_ver2.urdf.xacro"/>
+    <xacro:include filename="$(find wheelleg_description_ver12)/urdf/RH_wheelleg_leg_ver2.urdf.xacro"/>
+
+
+	<!-- Using the macros defined above -->
+	<!-- trunk -->
+	<xacro:wheelleg_trunk name="base"/>
+
+	<!-- LF leg -->
+	<xacro:LF_wheelleg_leg
+		name="LF"
+		parent="base_link">
+		<origin xyz="${d_lb} ${d_db} ${d_dz}" rpy="0 ${PI} 0"/>
+	</xacro:LF_wheelleg_leg>
+ 
+
+    <!-- LH leg -->
+	<xacro:LF_wheelleg_leg
+		name="LH"
+		parent="base_link">
+		<origin xyz="${-d_lb} ${d_db} ${d_dz}" rpy="0 ${PI} 0"/>
+	</xacro:LF_wheelleg_leg>
+
+
+    <!-- RF leg -->
+	<xacro:RF_wheelleg_leg
+		name="RF"
+		parent="base_link">
+		<origin xyz="${d_lb} ${-d_db} ${d_dz}" rpy="0 ${PI} 0"/>
+	</xacro:RF_wheelleg_leg>
+
+
+    <!-- RH leg -->
+	<xacro:RH_wheelleg_leg
+		name="RH"
+		parent="base_link">
+		<origin xyz="${-d_lb} ${-d_db} ${d_dz}" rpy="0 ${PI} 0"/>
+	</xacro:RH_wheelleg_leg>
+	
+
+	
+	
+</robot> -->

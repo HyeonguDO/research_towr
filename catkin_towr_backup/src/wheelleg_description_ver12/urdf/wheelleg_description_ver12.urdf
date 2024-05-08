@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wheelleg_description_ver12">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.018477 0.0053442 0.0047358"
+        rpy="0 0 0" />
+      <mass
+        value="2.4417" />
+      <inertia
+        ixx="0.0036992"
+        ixy="-0.00054117"
+        ixz="2.6284E-06"
+        iyy="0.01421"
+        iyz="-3.3856E-05"
+        izz="0.014405" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LF_hr">
+    <inertial>
+      <origin
+        xyz="0.0254381972161002 0.012529224507784 -8.63487661971517E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.567815366839139" />
+      <inertia
+        ixx="0.000570978647284917"
+        ixy="-3.97708765468956E-07"
+        ixz="1.48220765887281E-08"
+        iyy="0.000579959876312731"
+        iyz="-3.71191358023925E-07"
+        izz="0.000388548177892307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_hr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_hr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_hr_joint"
+    type="revolute">
+    <origin
+      xyz="0.2496 0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF_hr" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_hp">
+    <inertial>
+      <origin
+        xyz="0.000558060138357797 0.0516976279704902 -0.0801936148629627"
+        rpy="0 0 0" />
+      <mass
+        value="0.657880483360443" />
+      <inertia
+        ixx="0.00298561412676882"
+        ixy="-3.44193414515424E-09"
+        ixz="1.85078099792161E-05"
+        iyy="0.00327753554959795"
+        iyz="4.8065295418868E-07"
+        izz="0.000329090678857989" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_hp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_hp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_hp_joint"
+    type="revolute">
+    <origin
+      xyz="0.07 0.0636 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF_hr" />
+    <child
+      link="LF_hp" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_k">
+    <inertial>
+      <origin
+        xyz="-0.112850655688754 0.00117399751274616 -0.00247273907539436"
+        rpy="0 0 0" />
+      <mass
+        value="0.198464848924009" />
+      <inertia
+        ixx="3.8426290181491E-05"
+        ixy="-1.02195218814259E-06"
+        ixz="-2.45787343398481E-06"
+        iyy="0.000174670488768274"
+        iyz="-2.23926078139554E-08"
+        izz="0.000150547481060215" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_k.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_k.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_k_joint"
+    type="revolute">
+    <origin
+      xyz="0.0020916 0.029 -0.29999"
+      rpy="0 -1.5533 0" />
+    <parent
+      link="LF_hp" />
+    <child
+      link="LF_k" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_w">
+    <inertial>
+      <origin
+        xyz="2.00787497739441E-10 0.00227619266425716 -9.57534052048459E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.736836125439235" />
+      <inertia
+        ixx="0.000501009398610274"
+        ixy="-5.31845815699741E-13"
+        ixz="-2.65736145664147E-09"
+        iyy="0.000781598953029627"
+        iyz="2.49681135998751E-14"
+        izz="0.000501006438477364" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LF_w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_w_joint"
+    type="continuous">
+    <origin
+      xyz="-0.30993 0.0445 -0.0067909"
+      rpy="0 -0.017542 0" />
+    <parent
+      link="LF_k" />
+    <child
+      link="LF_w" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="RF_hr">
+    <inertial>
+      <origin
+        xyz="0.0245547394831418 -0.0122949755194758 -8.46309781258655E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.577928765321086" />
+      <inertia
+        ixx="0.000583453587938907"
+        ixy="3.97412814108162E-07"
+        ixz="-1.48221035827132E-08"
+        iyy="0.000586245308829157"
+        iyz="4.01017269066758E-07"
+        izz="0.000394832457952154" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_hr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_hr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_hr_joint"
+    type="revolute">
+    <origin
+      xyz="0.2496 -0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF_hr" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_hp">
+    <inertial>
+      <origin
+        xyz="0.000512051863035379 -0.051697627908871 -0.0801939218716638"
+        rpy="0 0 0" />
+      <mass
+        value="0.657880483360805" />
+      <inertia
+        ixx="0.00298563500987998"
+        ixy="2.97198903500265E-09"
+        ixz="1.6942907650999E-05"
+        iyy="0.00327753554959869"
+        iyz="-4.80653823745764E-07"
+        izz="0.000329069795746094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_hp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_hp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_hp_joint"
+    type="revolute">
+    <origin
+      xyz="0.07 -0.0636 0"
+      rpy="0 0 0" />
+    <parent
+      link="RF_hr" />
+    <child
+      link="RF_hp" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_k">
+    <inertial>
+      <origin
+        xyz="-0.112877734706474 -0.00117399742584921 4.39926820854364E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.198464848922729" />
+      <inertia
+        ixx="3.83724525850957E-05"
+        ixy="1.02219751488373E-06"
+        ixz="4.36778480574663E-08"
+        iyy="0.000174670488766466"
+        iyz="-3.98387492109487E-10"
+        izz="0.000150601318658006" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_k.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_k.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_k_joint"
+    type="revolute">
+    <origin
+      xyz="0.0019115 -0.029 -0.29999"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RF_hp" />
+    <child
+      link="RF_k" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_w">
+    <inertial>
+      <origin
+        xyz="-5.67896063508044E-10 -0.00227618034713825 1.17095022567071E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.736835712989822" />
+      <inertia
+        ixx="0.000501004638683537"
+        ixy="2.94996142650155E-13"
+        ixz="8.39702571764766E-12"
+        iyy="0.00078159845249956"
+        iyz="1.99204433961118E-13"
+        izz="0.000501010696257228" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RF_w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_w_joint"
+    type="continuous">
+    <origin
+      xyz="-0.31 -0.0445 0.00012078"
+      rpy="0 0 0" />
+    <parent
+      link="RF_k" />
+    <child
+      link="RF_w" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="LH_hr">
+    <inertial>
+      <origin
+        xyz="-0.0245547394830637 0.0122949755197763 -8.46309577369562E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.577928765321086" />
+      <inertia
+        ixx="0.000583453587938914"
+        ixy="3.97412814101913E-07"
+        ixz="1.48221042393631E-08"
+        iyy="0.000586245308830483"
+        iyz="-4.01016951645256E-07"
+        izz="0.000394832457950825" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_hr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_hr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LH_hr_joint"
+    type="revolute">
+    <origin
+      xyz="-0.2656 0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LH_hr" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LH_hp">
+    <inertial>
+      <origin
+        xyz="0.000164044575075267 0.0516976280417897 -0.0801953887571782"
+        rpy="0 0 0" />
+      <mass
+        value="0.657880483360537" />
+      <inertia
+        ixx="0.00298573186269122"
+        ixy="-1.08033884716331E-09"
+        ixz="5.4549912919099E-06"
+        iyy="0.0032775355495971"
+        iyz="4.80666685034126E-07"
+        izz="0.000328972942936453" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_hp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_hp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LH_hp_joint"
+    type="revolute">
+    <origin
+      xyz="-0.07 0.0636 0"
+      rpy="0 0 0" />
+    <parent
+      link="LH_hr" />
+    <child
+      link="LH_hp" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LH_k">
+    <inertial>
+      <origin
+        xyz="-0.112864181759625 0.00117399751802882 -0.00174968662765981"
+        rpy="0 0 0" />
+      <mass
+        value="0.19846484892259" />
+      <inertia
+        ixx="3.83993991733479E-05"
+        ixy="-1.02207467098984E-06"
+        ixz="-1.73935817685966E-06"
+        iyy="0.0001746704887681"
+        iyz="-1.58447946027821E-08"
+        izz="0.000150574372068084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_k.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_k.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LH_k_joint"
+    type="revolute">
+    <origin
+      xyz="0.00061765 0.029 -0.3"
+      rpy="0 -1.5533 0" />
+    <parent
+      link="LH_hp" />
+    <child
+      link="LH_k" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LH_w">
+    <inertial>
+      <origin
+        xyz="-1.13557341308024E-09 0.0022761803471617 -6.36876662518659E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.736835712989823" />
+      <inertia
+        ixx="0.000501006627473481"
+        ixy="2.93727275899398E-13"
+        ixz="2.84464878484926E-09"
+        iyy="0.00078159845249956"
+        iyz="1.22642736339409E-13"
+        izz="0.000501008707467285" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/LH_w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LH_w_joint"
+    type="continuous">
+    <origin
+      xyz="-0.30996 0.0445 -0.0048052"
+      rpy="0 0 0" />
+    <parent
+      link="LH_k" />
+    <child
+      link="LH_w" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="RH_hr">
+    <inertial>
+      <origin
+        xyz="-0.0245571567989414 -0.0122949755137087 -8.22136603405108E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.577928765321087" />
+      <inertia
+        ixx="0.000583453587938897"
+        ixy="-3.97594421379008E-07"
+        ixz="-1.48221058577687E-08"
+        iyy="0.000586245308830599"
+        iyz="3.7119110573758E-07"
+        izz="0.000394832457950726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_hr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_hr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RH_hr_joint"
+    type="revolute">
+    <origin
+      xyz="-0.2656 -0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RH_hr" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RH_hp">
+    <inertial>
+      <origin
+        xyz="0.000839395304824866 -0.0516976280523152 -0.0801911634969785"
+        rpy="0 0 0" />
+      <mass
+        value="0.657880483360999" />
+      <inertia
+        ixx="0.002985452426239"
+        ixy="4.93398257316777E-09"
+        ixz="2.77862219849152E-05"
+        iyy="0.00327753554959699"
+        iyz="-4.80642961909136E-07"
+        izz="0.000329252379388807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_hp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_hp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RH_hp_joint"
+    type="revolute">
+    <origin
+      xyz="-0.07 -0.0636 0"
+      rpy="0 0 0" />
+    <parent
+      link="RH_hr" />
+    <child
+      link="RH_hp" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RH_k">
+    <inertial>
+      <origin
+        xyz="-0.112877152385421 -0.0011739978426467 0.000365227221470185"
+        rpy="0 0 0" />
+      <mass
+        value="0.198464848923645" />
+      <inertia
+        ixx="3.837361012005E-05"
+        ixy="1.02219210619496E-06"
+        ixz="3.63063991972023E-07"
+        iyy="0.000174670488768668"
+        iyz="-3.30741630045046E-09"
+        izz="0.000150600161121145" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_k.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_k.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RH_k_joint"
+    type="revolute">
+    <origin
+      xyz="0.0031361 -0.029 -0.29998"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RH_hp" />
+    <child
+      link="RH_k" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RH_w">
+    <inertial>
+      <origin
+        xyz="3.48285844609109E-11 -0.00227619326260615 1.94451454937905E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.736836125439237" />
+      <inertia
+        ixx="0.000501005017622882"
+        ixy="1.23377523868886E-13"
+        ixz="-9.14781031737048E-10"
+        iyy="0.000781598953029628"
+        iyz="5.01583170967053E-13"
+        izz="0.000501010819464757" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_w.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.313725490196078 0.313725490196078 0.313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheelleg_description_ver12/meshes/RH_w.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RH_w_joint"
+    type="continuous">
+    <origin
+      xyz="-0.31 -0.0445 0.001003"
+      rpy="0 0 0" />
+    <parent
+      link="RH_k" />
+    <child
+      link="RH_w" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

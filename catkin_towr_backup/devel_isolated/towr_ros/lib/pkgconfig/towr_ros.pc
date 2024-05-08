@@ -1,0 +1,8 @@
+prefix=/home/hyeongu/catkin_towr_backup/devel_isolated/towr_ros
+
+Name: towr_ros
+Description: Description of towr_ros
+Version: 1.4.1
+Cflags: -I/home/hyeongu/catkin_towr_backup/devel_isolated/towr_ros/include -I/home/hyeongu/catkin_towr_backup/src/towr/towr_ros/include -I/home/hyeongu/catkin_towr_backup/devel_isolated/towr/include -I/home/hyeongu/catkin_towr_backup/devel_isolated/ifopt/include
+Libs: -L${prefix}/lib -ltowr_ros /home/hyeongu/catkin_towr_backup/devel_isolated/towr/lib/libtowr.so /home/hyeongu/catkin_towr_backup/devel_isolated/ifopt/lib/libifopt_core.so /home/hyeongu/catkin_towr_backup/devel_isolated/ifopt/lib/libifopt_ipopt.so
+Requires: xpp_states roscpp

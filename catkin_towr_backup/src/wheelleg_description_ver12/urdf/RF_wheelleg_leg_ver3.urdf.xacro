@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- leg macro definiction -->
+	<xacro:macro name="LF_wheelleg_leg" params="name parent *origin">
+		<!-- Joints -->
+		<!-- q_hr joint -->
+		<joint name="${name}_hr_joint" type="revolute">
+			<xacro:insert_block name="origin"/>
+			<parent link="${parent}"/>
+			<child  link="${name}_hr"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="48.0" velocity="5.0" lower="${-PI/2}" upper="${PI/2}"/>
+		</joint>
+		
+		<!-- q_hp1 joint -->
+		<joint name="${name}_hp1_joint" type="fixed">
+			<origin xyz="0 ${d_d1} ${d_l1}" rpy="${-PI/2} ${-PI/2} 0"/>
+			<parent link="${name}_hr"/>
+			<child  link="${name}_hp1"/>
+		</joint>
+
+		<!-- q_hp2 joint -->
+		<joint name="${name}_hp2_joint" type="revolute">
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<parent link="${name}_hp1"/>
+			<child  link="${name}_hp2"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="76.8" velocity="5.0"
+          lower="${-3*PI}"
+          upper="${3*PI}"/>
+		</joint>
+		
+		<!-- q_k joint -->
+		<joint name="${name}_k_joint" type="revolute">
+			<origin xyz="${d_l2} 0 ${d_d2}" rpy="${PI} 0 0"/>
+			<parent link="${name}_hp2"/>
+			<child  link="${name}_k"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="48.0" velocity="5.0"
+          lower="${-7/9*PI}"
+          upper="${7/9*PI}"/>
+		</joint>
+
+        <!-- q_w joint -->
+		<joint name="${name}_w_joint" type="fixed">
+			<origin xyz="${d_l3} 0 0" rpy="${PI} 0 0"/>
+			<parent link="${name}_k"/>
+			<child  link="${name}_w"/>
+			<axis xyz="0 0 1"/>
+		</joint>
+
+		<!-- Foot joint -->
+		<joint name="${name}_foot_joint" type="fixed">
+			<origin xyz="-0.075 0 0" rpy="0 0 0"/>
+			<parent link="${name}_w"/>
+			<child  link="${name}_foot"/>
+		</joint>
+
+		<!-- Links -->
+		<!-- q_hr link -->
+		<link name="${name}_hr">
+			<visual>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hr.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+            <collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hr.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+            <inertial>
+                <origin
+                    xyz="${inertia_hr_x} ${inertia_hr_y} ${inertia_hr_z}"
+                    rpy="0 0 0" />
+                <mass
+                    value="1.262" />
+                <inertia
+                    ixx="0.002145988"
+                    ixy="0.000001667"
+                    ixz="7.52E-07"
+                    iyy="0.00149516"
+                    iyz="-0.000381063"
+                    izz="0.001987437" />
+                </inertial>
+		</link>
+		
+		<!-- q_hp1 link -->
+		<link name="${name}_hp1">
+			<visual> 
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hp1.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+            <collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hp1.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+            <inertial>
+                <origin
+                    xyz="${inertia_hp1_x} ${inertia_hp1_y} ${inertia_hp1_z}"
+                    rpy="3.1416 0 0" />
+                <mass
+                    value="2.017" />
+                <inertia
+                    ixx="0.002812305"
+                    ixy="-0.000001194"
+                    ixz="-0.000001182"
+                    iyy="0.003113101"
+                    iyz="0.000222405"
+                    izz="0.002478391" />
+                </inertial>
+		</link>
+
+ 
+		<!-- q_hp2 link -->
+		<link name="${name}_hp2">
+			<visual> 
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hp2.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+            <collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_hp2.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+            <inertial>
+                <origin
+                    xyz="${inertia_hp2_x} ${inertia_hp2_y} ${inertia_hp2_z}"
+                    rpy="3.1416 1.57 ${-PI/26}" />
+                <mass
+                    value="2.510" />
+                <inertia
+                    ixx="0.046167112"
+                    ixy="0.000008451"
+                    ixz="0.000065646"
+                    iyy="0.044879746"
+                    iyz="-0.005843479"
+                    izz="0.003323929" />
+                </inertial>
+		</link>
+		
+		<!-- q_k link -->
+		<link name="${name}_k">
+			<visual>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_k.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+            <collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_k.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+            <inertial>
+                <origin
+                    xyz="${inertia_k_x} ${inertia_k_y} ${inertia_k_z}"
+                    rpy="3.1416 1.57 0" />
+                <mass
+                    value="0.377" />
+                <inertia
+                    ixx="0.005710257"
+                    ixy="-1.64E-07"
+                    ixz="0.000006887"
+                    iyy="0.00573476"
+                    iyz="0.000095835"
+                    izz="0.000092113" />
+                </inertial>
+		</link>
+		
+        <!-- q_w link -->
+		<link name="${name}_w">
+			<visual>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_w.STL" scale="1 1 1"/>
+				</geometry>
+				<material
+        			name="">
+        		<color
+          			rgba="0.7451 0.73725 0.72941 1" />
+      			</material>
+			</visual>
+            <collision>
+				<geometry>
+					<mesh filename="package://wheelleg_description_ver15/meshes/LF_w.STL" scale="1 1 1"/>
+				</geometry>
+			</collision>
+            <inertial>
+                <origin
+                    xyz="${inertia_w_x} ${inertia_w_y} ${inertia_w_z}"
+                    rpy="1.57 0 ${PI/4}" />
+                <mass
+                    value="1.608" />
+                <inertia
+                    ixx="0.002039438"
+                    ixy="-0.000002629"
+                    ixz="-9E-09"
+                    iyy="0.003524325"
+                    iyz="0.000001415"
+                    izz="0.002039435" />
+                </inertial>
+		</link>
+
+		<!-- Foot link -->
+		<link name="${name}_foot">
+			<!-- <visual>
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+				<geometry>
+					<sphere radius="0.021"/>
+				</geometry>
+			</visual> -->
+		</link>
+		
+	</xacro:macro>
+
+</robot>
