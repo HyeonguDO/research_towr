@@ -48,6 +48,19 @@
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/terrain.png"/>
 </p>
 
++ Step 결과
+![Step_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/cf7c844e-d9d0-44f8-940c-79195b32c990)
+
++ Impulse 결과  
+![Impulse_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/b8472917-4cc7-4583-8ea3-d274f874139d)
+
++ Large pit 결과
+![Large_pit_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/34a312f8-57d5-4e59-a51b-722fe3237f6a)
+
++ Small pit 결과
+![Small_pit_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/f0a22152-3dcc-44f5-ab13-7e0ac32ce73f)
+
+
 실제 움직이는 움짤로 사용하는 모습 보이기 (4가지 케이스)
 
 데이터 결과는 어떻게?
