@@ -9,10 +9,10 @@
 
 ## Description
 
-사진1로 사용환경 제시
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/image01.png"/>
 </p>
+<p align="center">Fig 1. </p>
 
 사진2로 로프를 포함한 동역학, 로프의 세기를 정역학해석으로 구했음을 표현 (사진이랑 수식 캡쳐뜨기)
 <p align="center">
