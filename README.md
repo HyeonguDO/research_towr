@@ -1,5 +1,3 @@
- 24.05.10 미완성
-
 ## Project Title - 로프구동 사족로봇의 3차원 외벽 장애물 극복을 위한 궤적 최적화
 사족보행 로봇의 3차원 환경에 존재하는 여러 가지 장애물을 안정적으로 극복하기 위한 무게중심의 궤적 최적화를 위한 프로젝트 입니다. 
 
@@ -9,45 +7,75 @@
 
 ## Description
 
+본 연구는 등강용 로봇(Ascender)와 장애물 극복 로봇(Wheel-leg)로 구성된 외벽 청소 로봇의 후속 연구입니다.
+
+등강용 로봇에 해당하는 부분의 무게(mass)와 관성력(inertia)를 사족 보행 로봇의 무게중심 부분으로 집중 시키는 Single Rigid Body Dynamics(SRBD)를 이용하여 연구의 단순화를 진행했습니다. 
+그리고 로프가 새롭게 추가되며 생기는 장력 또한 동역학 계산에 고려했습니다.
+
+Fig. 1은 로프 시스템을 가진 사족 보행 로봇의 locomotion을 보여줍니다.
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/image01.png"/>
 </p>
-<p align="center">Fig 1. </p>
+<p align="center">[Fig. 1] The locomotion of quadrupedal robot</p>
 
-사진2로 로프를 포함한 동역학, 로프의 세기를 정역학해석으로 구했음을 표현 (사진이랑 수식 캡쳐뜨기)
+---
+
+로프의 장력을 고려한 동역학 식인 수정된 Single Rigid Body Dynamics(SRBD)를 계산하기 위해 Fig. 2 ~ Fg. 5의 과정을 따릅니다.
+
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/dynamic_config.png"/>
 </p>
+<p align="center">[Fig. 2] The force configuration of quadruped robot with rope tension (for calculating dynamics)</p>
 
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/dynamic_formula.png"/>
 </p>
+<p align="center">[Fig. 3] The dynamic formula of quadruped robot with rope tension</p>
 
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/tension_config.png"/>
 </p>
+<p align="center">[Fig. 4] The force configuration of quadruped robot with rope tension (for calculating tension)</p>
 
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/tension_formula.png"/>
 </p>
+<p align="center">[Fig. 5] The tension formula of quadruped robot with rope tension</p>
 
-사진3으로 로봇베이스 최적화를 위한 방식 설명(로봇베이스의 z높낮이와 pitch 각도 범위 조절로 인한.. 수식도 캡쳐뜨기)
+---
+TOWR를 이용해 로봇의 목표 지점까지 이동하기 위한 궤적 최적화는 크게 3가지 패키지(towr, ifopt, xpp)가 사용됩니다. 
+
++ towr: 사족 보행 로봇의 motion planning 및 이동 궤적 최적화를 위해 로봇의 정보(mass, inertia, dynamics, kinemaics etc.)와 구속조건(constraints)을 수학적으로 정의하는 부분
++ ifopt : towr 패키지에서 수학적으로 정의된 조건들을 바탕으로 최적 조건을 계산하기 위한 비선형 solver
++ xpp: towr와 ifopt를 이용해 계산된 결과를 시각적으로 보여주기 위한 tool
+
+Fig. 6는 그래프의 모든 영역을 로봇이 이동할 수 있는 범위로 가정했을 때 로봇의 파라미터, 목표와 구속조건이 모두 포함되는 영역으로 그 범위를 제한 함으로써 궤적 최적화 방식을 나타내고 있습니다. 
+
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/about_towr.png" height="400px" width="650px"/>
 </p>
+<p align="center">[Fig. 6] The diagram for optimization method of ‘TOWR’</p>
 
+TOWR에서 수학적으로 정의하는 로봇의 파라미터와 구속조건은 Fig. 7을 따르며 본 연구를 위해 수정된 부분은 빨간색으로 표시된 "dynamic model, rope tension, base motion constraint, terrain height" 입니다.
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/constraint_list.png"/>
 </p>
+<p align="center">[Fig. 7] Definition of variables and constraints for optimizing the legged locomotion</p>
 
+본 연구에서 새롭게 추가된 조건인 base motion constraint는 외벽 청소 로봇이 외벽 존재하는 장애물 극복 시 로봇 몸체의 흔들림을 최소화하기 위해 추가됐고, z축 방향의 병진운동과 pitch 방향의 회전운동의 범위를 제한 함으로써 몸체의 흔들림을 제어하게 되며 
+이를 표현하는 식은 Fig. 8과 같습니다. 
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/CoM_constraint.png"/>
 </p>
+<p align="center">[Fig. 8] The CoM constraint for optimizing the legged locomotion</p>
 
+시뮬레이션은 roll, pitch 각도가 동시에 변하는 지형에 존재하는 4가지 형태의 장애물에 대하여 진행되었고 장애물의 모습은 Fig. 9와 같습니다.
 <p align="center">
   <img src="https://github.com/HyeonguDO/research_towr/blob/master/terrain.png"/>
 </p>
+<p align="center">[Fig. 9] The definition of terrain with obstacles. (a) Impulse (b) Step (c) Small pit (d) Large pit</p>
 
+## Simulation Result
 + Step 결과
 ![Step_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/cf7c844e-d9d0-44f8-940c-79195b32c990)
 
@@ -61,25 +89,12 @@
 ![Small_pit_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/f0a22152-3dcc-44f5-ab13-7e0ac32ce73f)
 
 
-실제 움직이는 움짤로 사용하는 모습 보이기 (4가지 케이스)
-
-데이터 결과는 어떻게?
-
-
 ## Authors
 
 Contributors names and contact info
 
 ex. Dominique Pizzie  
 ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
