@@ -79,32 +79,81 @@ TOWR에서 수학적으로 정의하는 로봇의 파라미터와 구속조건�
 + Step 결과
 ![Step_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/cf7c844e-d9d0-44f8-940c-79195b32c990)
 
+Fig. 10은 Step 장애물을 극복하는 동안의 무게중심의 병진 및 회전 변화량을 나타냅니다. 파란색 파선은 base motion constraint를 적용하기 전을, 빨간색 실선은 base motion constraint를 적용한 후를 나타냅니다.
+<p align="center">
+  <img src="https://github.com/HyeonguDO/research_towr/blob/master/step_data.png"/>
+</p>
+<p align="center">[Fig. 10] The trajectory optimization data during overcoming step obstacle</p>
+
+
+Table. 1은 RMSE를 이용하여 최적화 정도를 계산한 것을 나타내며 클수록 성능개선 효과가 크다는 것을 의미합니다.  
+|Step Case|Normal|Optimal|Difference [%]|
+|:---:|:---:|:---:|:---:|
+|z-CoM position|0.1068|0.0696|53.30|
+|Pitch angle |0.0547|0.0555|-1.49|
+</p>
+<p align="center">[Table. 1] The trajectory optimization data during overcoming Step obstacle</p>
+
+---
+
 + Impulse 결과  
 ![Impulse_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/b8472917-4cc7-4583-8ea3-d274f874139d)
+
+Fig. 11는 Impulse 장애물을 극복하는 동안의 무게중심의 병진 및 회전 변화량을 나타냅니다. 파란색 파선은 base motion constraint를 적용하기 전을, 빨간색 실선은 base motion constraint를 적용한 후를 나타냅니다.
+<p align="center">
+  <img src="https://github.com/HyeonguDO/research_towr/blob/master/impulse_data.png"/>
+</p>
+<p align="center">[Fig. 11] The trajectory optimization data during overcoming Impulse obstacle</p>
+
+
+Table. 2은 RMSE를 이용하여 최적화 정도를 계산한 것을 나타내며 클수록 성능개선 효과가 크다는 것을 의미합니다.  
+|Step Case|Normal|Optimal|Difference [%]|
+|:---:|:---:|:---:|:---:|
+|z-CoM position|0.0793|0.0735|7.89|
+|Pitch angle |0.0496|0.0441|12.60|
+</p>
+<p align="center">[Table. 2] The trajectory optimization data during overcoming Impulse obstacle</p>
+
+---
 
 + Large pit 결과
 ![Large_pit_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/34a312f8-57d5-4e59-a51b-722fe3237f6a)
 
+Fig. 12는 Large Pit 장애물을 극복하는 동안의 무게중심의 병진 및 회전 변화량을 나타냅니다. 파란색 파선은 base motion constraint를 적용하기 전을, 빨간색 실선은 base motion constraint를 적용한 후를 나타냅니다.
+<p align="center">
+  <img src="https://github.com/HyeonguDO/research_towr/blob/master/large_pit_data.png"/>
+</p>
+<p align="center">[Fig. 12] The trajectory optimization data during overcoming Large Pit obstacle</p>
+
+
+Table. 3은 RMSE를 이용하여 최적화 정도를 계산한 것을 나타내며 클수록 성능개선 효과가 크다는 것을 의미합니다.  
+|Step Case|Normal|Optimal|Difference [%]|
+|:---:|:---:|:---:|:---:|
+|z-CoM position|0.1429|0.1214|17.57|
+|Pitch angle |0.1002|0.0915|9.45|
+</p>
+<p align="center">[Table. 3] The trajectory optimization data during overcoming Large Pit obstacle</p>
+
+---
+
 + Small pit 결과
 ![Small_pit_opt (video-converter com)](https://github.com/HyeonguDO/research_towr/assets/134991454/f0a22152-3dcc-44f5-ab13-7e0ac32ce73f)
 
+Fig. 13는 Small Pit 장애물을 극복하는 동안의 무게중심의 병진 및 회전 변화량을 나타냅니다. 파란색 파선은 base motion constraint를 적용하기 전을, 빨간색 실선은 base motion constraint를 적용한 후를 나타냅니다.
+<p align="center">
+  <img src="https://github.com/HyeonguDO/research_towr/blob/master/small_pit_data.png"/>
+</p>
+<p align="center">[Fig. 13] The trajectory optimization data during overcoming Small Pit obstacle</p>
 
-## Authors
 
-Contributors names and contact info
+Table. 4은 RMSE를 이용하여 최적화 정도를 계산한 것을 나타내며 클수록 성능개선 효과가 크다는 것을 의미합니다.  
+|Step Case|Normal|Optimal|Difference [%]|
+|:---:|:---:|:---:|:---:|
+|z-CoM position|0.0530|0.0504|5.17|
+|Pitch angle |0.0472|0.0311|51.96|
+</p>
+<p align="center">[Table. 4] The trajectory optimization data during overcoming Small Pit obstacle</p>
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+## Author
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Hyeongu Do
